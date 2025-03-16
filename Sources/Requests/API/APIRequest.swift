@@ -6,7 +6,7 @@
 //
 import Foundation
 
-protocol APIRequest: Request, DataRequest {
+public protocol APIRequest: Request, DataRequest {
     var scheme: API.Scheme { get }
     var host: String { get }
     var path: String { get }
@@ -14,7 +14,7 @@ protocol APIRequest: Request, DataRequest {
     var parameters: [String: String] { get }
 }
 
-extension APIRequest {
+public extension APIRequest {
     private func toURLRequest() throws -> URLRequest {
         var components = URLComponents()
         components.scheme = scheme.rawValue
@@ -30,7 +30,7 @@ extension APIRequest {
         return urlRequest
     }
 
-    public func fetch() async throws -> Output {
+    func fetch() async throws -> Output {
         let urlRequest = try toURLRequest()
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
 
