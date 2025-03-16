@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 public enum RequetsTest {
-    public func test() {
+    public static func test() {
         print("Testing package Requests")
     }
 }
