@@ -1,2 +1,2 @@
 # Requests
-Simple way to request data
+Simple way to request data in Swift apps
