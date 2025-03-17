@@ -12,3 +12,12 @@ public protocol Request<Output> {
     func fetch() async throws -> Output
     func fetchPublisher() -> AnyPublisher<Output, Error>
 }
+
+public extension Request {
+    func fetchPublisher() -> AnyPublisher<Output, Error> {
+        Future {
+            try await fetch()
+        }
+        .eraseToAnyPublisher()
+    }
+}
