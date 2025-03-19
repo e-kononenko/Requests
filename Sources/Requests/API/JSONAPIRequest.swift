@@ -5,4 +5,4 @@
 //  Created by Evgenii Kononenko on 16.03.25.
 //
 
-public protocol JSONAPIRequest: APIRequest, JSONDataRequest {}
+public typealias JSONAPIRequest = APIRequest & JSONDataRequest
