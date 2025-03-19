@@ -44,9 +44,9 @@ struct CitySearchRequest: APIRequestJSON {
 To get automatic decoding, your model should conform to `Decodable` protocol:
 ```swift
 struct CityResponseModel: Decodable {
-	let name: String
-	let lat: Double
-	let long: Double
+    let name: String
+    let lat: Double
+    let long: Double
 }
 ```
 
