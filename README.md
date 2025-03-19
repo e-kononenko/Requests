@@ -20,6 +20,7 @@ Here is the example of usage:
 
 ```swift
 struct CitySearchRequest: APIRequestJSON {
+    // protocol requirements
     typealias Output = [CityResponseModel]
 
     let scheme: Requests.API.Scheme = .https
@@ -37,6 +38,7 @@ struct CitySearchRequest: APIRequestJSON {
         ]
     }
 
+    // additional parameters
     let query: String
 }
 ```
@@ -50,11 +52,20 @@ struct CityResponseModel: Decodable {
 }
 ```
 
+Create request:
+```swift 
+let request = CitySearchRequest(query: "London")
+```
+
 Then call `fetch()` function if you use async/await:
 
 ```swift
-let request = CitySearchRequest(query: "London")
-let cityResponseModels: [CityResponseModel] = try await request.fetch()
+do {
+    let cityResponseModels: [CityResponseModel] = try await request.fetch()
+    print(cityResponseModels)
+} catch {
+    // handle error
+}
 ```
 
 Or use Combine Publisher:
