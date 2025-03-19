@@ -2,6 +2,9 @@
 
 Simple way to fetch desired models from different sources (e.g API, Bundle, etc) in Swift apps. Supports async/await and Combine.
 
+### Installation
+Add SPM dependency: `https://github.com/e-kononenko/Requests.git`
+
 ### Request
 - Create your `Request` or use one of built-in requests, such as `APIRequestJSON`
 - Implement necessary properties or functions if needed
