@@ -3,7 +3,7 @@
 Simple way to fetch desired models from different sources (e.g API, Bundle, etc) in Swift apps. Supports async/await and Combine.
 
 ### Request
-- Create your `Request` or use one of built-in protocols, such as `APIRequestJSON`
+- Create your `Request` or use one of built-in requests, such as `APIRequestJSON`
 - Implement necessary properties or functions if needed
 - Call `try await request.fetch()` or subscribe to `request.fetchPublisher()`
 
