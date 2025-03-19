@@ -50,12 +50,21 @@ struct CityResponseModel: Decodable {
 }
 ```
 
-Then call `fetch()` function:
+Then call `fetch()` function if you use async/await:
 
 ```swift
 let request = CitySearchRequest(query: "London")
-let cityResponses: [CityResponseModel] = try await request.fetch()
+let cityResponseModels: [CityResponseModel] = try await request.fetch()
 ```
 
-
+Or use Combine Publisher:
+```swift
+request.fetchPublisher()
+    .sink { completion in
+        // handle completion
+    } receiveValue: { cityResponseModels in
+        print(cityResponseModels)
+    }
+    .store(in: &cancellables)
+```
 
