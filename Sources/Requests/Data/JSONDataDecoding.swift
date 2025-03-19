@@ -7,15 +7,21 @@
 
 import Foundation
 
-public protocol JSONDataDecoding: DataDecoding { }
+public protocol JSONDataDecoding: DataDecoding {
+    var decoder: JSONDecoder { get }
+}
 
 extension JSONDataDecoding where Output: Decodable {
     public func decode(_ data: Data) throws -> Output {
-        return try JSONDecoder.requestJsonDecoder
+        return try decoder
             .decode(Output.self, from: data)
+    }
+
+    var decoder: JSONDecoder {
+        JSONDecoder.requestsJsonDecoder
     }
 }
 
 fileprivate extension JSONDecoder {
-    static let requestJsonDecoder: JSONDecoder = .init()
+    static let requestsJsonDecoder: JSONDecoder = .init()
 }
