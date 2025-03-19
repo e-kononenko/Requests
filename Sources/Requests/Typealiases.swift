@@ -6,4 +6,4 @@
 //
 
 public typealias APIRequestJSON = APIRequest & JSONDataDecoding
-public typealias BundledFileRequestJSON = BundleFileRequest & JSONDataDecoding
+public typealias BundledFileRequestJSON = BundledFileRequest & JSONDataDecoding
