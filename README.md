@@ -1,6 +1,6 @@
 #### Disclaimer: This is a very early stage of the library's development! Everything can change at every moment, so do not use this library in production apps!
 
-Simple way to fetch desired models from different sources (e.g API, Bundle, etc) in Swift apps. Supports async/await and Combine.
+Simple way to fetch desired models from different sources (e.g API, Bundle, etc) in Swift apps. Supports automatic decoding. Can be used with async/await and Combine.
 
 ### Installation
 Add SPM dependency: `https://github.com/e-kononenko/Requests.git`
