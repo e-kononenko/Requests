@@ -6,6 +6,7 @@
 //
 import Foundation
 
-public protocol DataRequest: Request {
+public protocol DataDecoding<Output> {
+    associatedtype Output
     func decode(_ data: Data) throws -> Output
 }

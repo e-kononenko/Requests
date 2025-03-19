@@ -6,7 +6,7 @@
 //
 import Foundation
 
-public protocol APIRequest: Request, DataRequest {
+public protocol APIRequest: Request, DataDecoding {
     var scheme: API.Scheme { get }
     var host: String { get }
     var path: String { get }

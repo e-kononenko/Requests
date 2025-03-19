@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol JSONDataRequest: DataRequest { }
+public protocol JSONDataDecoding: DataDecoding { }
 
-extension JSONDataRequest where Output: Decodable {
+extension JSONDataDecoding where Output: Decodable {
     public func decode(_ data: Data) throws -> Output {
         return try JSONDecoder.requestJsonDecoder
             .decode(Output.self, from: data)
