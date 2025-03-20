@@ -17,7 +17,7 @@ public extension BundledFileRequest where Output: Decodable {
     var bundle: Bundle { .main }
 
     func fetch() async throws -> Output {
-        guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {
+        guard let fileURL = bundle.url(forResource: fileName, withExtension: fileExtension) else {
             throw Bundled.Error.notFound
         }
 
